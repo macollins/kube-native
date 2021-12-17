@@ -5,6 +5,7 @@ RUN mvn -B -f pom.xml -s /usr/share/maven/ref/settings-docker.xml dependency:res
 COPY . .
 RUN mvn -B -s /usr/share/maven/ref/settings-docker.xml package -DskipTests
 
+
 FROM maven:3.6.3-jdk-8 AS test
 WORKDIR /usr/src/demo
 COPY . .
